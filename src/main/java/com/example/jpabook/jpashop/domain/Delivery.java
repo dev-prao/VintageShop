@@ -1,3 +1,29 @@
 package com.example.jpabook.jpashop.domain;
 
-public class Delivery {}
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import static javax.persistence.FetchType.*;
+
+@Entity
+@Getter
+@Setter
+public class Delivery {
+
+    @Id @GeneratedValue
+    @Column(name = "delivery_id")
+    private Long id;
+
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
+    private Order order;
+
+    @Embedded
+    private Address address;
+
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus status; //READY, START, COMPLETE
+}
