@@ -10,4 +10,7 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 @DiscriminatorValue("out")
-public class Outer extends Item {}
+public class Outer extends Item {
+    private int chestSize;
+    private int length;
+}

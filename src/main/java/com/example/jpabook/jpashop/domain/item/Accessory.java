@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
-@DiscriminatorValue("lp")
-public class LongPants extends Item {
-    private int weist;
+@DiscriminatorValue("acc")
+public class Accessory extends Item {
+    private int size;
 }
