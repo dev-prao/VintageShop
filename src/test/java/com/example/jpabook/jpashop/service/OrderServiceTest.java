@@ -4,6 +4,7 @@ import com.example.jpabook.jpashop.domain.Address;
 import com.example.jpabook.jpashop.domain.Member;
 import com.example.jpabook.jpashop.domain.Order;
 import com.example.jpabook.jpashop.domain.OrderStatus;
+import com.example.jpabook.jpashop.domain.exception.NotEnoughStockException;
 import com.example.jpabook.jpashop.domain.item.Item;
 import com.example.jpabook.jpashop.domain.item.Top;
 import com.example.jpabook.jpashop.repository.OrderRepository;
@@ -54,10 +55,30 @@ class OrderServiceTest {
         //Given
         Member member = createMember();
         Item item = createTop("무지 긴팔티", "무신사", 10000, 20, "men", "cotton");
-        int orderCount = 1; //재고보다 많은 수량 //When
+        int orderCount = 2; //재고보다 많은 수량 //When
         orderService.order(member.getId(), item.getId(), orderCount);
         //Then
-        fail("재고 수량 부족 예외가 발생해야 한다.");
+        assertThrows(NotEnoughStockException.class, () -> {orderService.order(member.getId(), item.getId(), orderCount);},
+                     "재고수량이 부족 하면 예외가 발생 한다 ");
+    }
+
+    @Test
+    public void 주문취소 () throws Exception {
+        //given
+        Member member = createMember();
+        Item item = createTop("무지 긴팔티", "무신사", 10000, 20, "men", "cotton");
+        int orderCount = 2;
+
+        Long orderId = orderService.order(member.getId(), item.getId(), orderCount);
+
+        //when
+        orderService.cancelOrder(orderId);
+
+        //then
+        Order getOrder = orderRepository.findOne(orderId);
+
+        assertEquals(OrderStatus.CANCEL, getOrder.getStatus(), "주문 취소시 상태는 CANCLE 이다.");
+        assertEquals(20, item.getStockQuantity(), "주문이 취소된 상품은 그만큼 재고가 증가해야 한다.");
     }
 
     private Member createMember() {
