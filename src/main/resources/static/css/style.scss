@@ -788,6 +788,10 @@ a:focus {
                 }
             }
         }
+        hr {
+            border-top: 1px solid white;
+            margin: 5px 0;
+        }
     }
 
     .info_link-box {
@@ -827,6 +831,8 @@ a:focus {
         }
     }
 }
+
+
 
 /* end info section */
 
