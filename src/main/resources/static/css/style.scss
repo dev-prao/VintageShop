@@ -259,7 +259,7 @@ a:focus {
 
 .slider_section {
     height: calc(100% - 80px);
-    background-image: url(../images/slider-bg.jpg);
+    background-image: url(../images/slider-bg1.jpg);
     background-size: cover;
 
     .slider_container {
@@ -280,13 +280,13 @@ a:focus {
         h1 {
             font-size: 4rem;
             font-weight: bold;
-            color: $btnWhite;
+            color: $black;
             text-transform: uppercase;
 
         }
 
         p {
-            color: $white;
+            color: $black;
         }
 
         .btn-box {
@@ -294,6 +294,7 @@ a:focus {
             flex-wrap: wrap;
             margin-top: 35px;
             margin: 35px -5px 0 -5px;
+            justify-content: center;
 
             a {
                 width: 165px;
@@ -303,11 +304,13 @@ a:focus {
 
             .btn-1 {
                 @include hero_btn($primary, $white, 7px, 0);
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .btn-2 {
-                @include hero_btn($btnWhite, #020000, 7px, 0);
-            }
+            //.btn-2 {
+            //    @include hero_btn($btnWhite, #020000, 7px, 0);
+            //}
         }
     }
 

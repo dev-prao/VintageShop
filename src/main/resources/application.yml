@@ -5,6 +5,10 @@ spring:
     password: 1234
     driver-class-name: oracle.jdbc.OracleDriver
 
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
   jpa:
     hibernate:
       ddl-auto: create
