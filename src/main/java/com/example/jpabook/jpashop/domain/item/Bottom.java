@@ -11,7 +11,5 @@ import javax.persistence.Entity;
 @Setter
 @DiscriminatorValue("bot")
 public class Bottom extends Item {
-    private int waistSize; //허리
-    private int rise; //밑위
-    private int length; //기장
+
 }

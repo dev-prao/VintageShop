@@ -11,5 +11,4 @@ import javax.persistence.Entity;
 @Setter
 @DiscriminatorValue("shoes")
 public class Shoes extends Item {
-    private int footSize;
 }

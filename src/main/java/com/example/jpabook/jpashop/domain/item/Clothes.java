@@ -9,8 +9,9 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
-@DiscriminatorValue("top")
-public class Top extends Item {
-    private int chestSize;
-    private int length;
+@DiscriminatorValue("clo")
+public class Clothes extends Item {
+    private int size;
+    private String gender;
+    private String material;
 }

@@ -24,11 +24,9 @@ public class ItemService {
     public void updateItem(Long itemId, String name, String brand, int price, int stockQuantity, String gender, String material) {
         Item findItem = itemRepository.findOne(itemId);
         findItem.setName(name);
-        findItem.setBrand(brand);
         findItem.setPrice(price);
+        findItem.setBrand(brand);
         findItem.setStockQuantity(stockQuantity);
-        findItem.setGender(gender);
-        findItem.setMaterial(material);
     }
 
     public List<Item> findItems() {

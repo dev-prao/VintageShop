@@ -11,5 +11,4 @@ import javax.persistence.Entity;
 @Setter
 @DiscriminatorValue("acc")
 public class Accessory extends Item {
-    private int size;
 }

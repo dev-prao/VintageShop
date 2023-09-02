@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ItemForm {
+public class ClothesForm {
 
     private Long id;
 
@@ -14,8 +14,7 @@ public class ItemForm {
     private int price;
     private int stockQuantity;
 
+    private int size;
     private String gender;
-    private String size;
     private String material;
-    private int statusScore;
 }

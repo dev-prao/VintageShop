@@ -11,6 +11,4 @@ import javax.persistence.Entity;
 @Setter
 @DiscriminatorValue("out")
 public class Outer extends Item {
-    private int chestSize;
-    private int length;
 }

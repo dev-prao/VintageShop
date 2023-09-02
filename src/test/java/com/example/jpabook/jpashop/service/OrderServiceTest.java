@@ -6,7 +6,7 @@ import com.example.jpabook.jpashop.domain.Order;
 import com.example.jpabook.jpashop.domain.OrderStatus;
 import com.example.jpabook.jpashop.domain.exception.NotEnoughStockException;
 import com.example.jpabook.jpashop.domain.item.Item;
-import com.example.jpabook.jpashop.domain.item.Top;
+import com.example.jpabook.jpashop.domain.item.Clothes;
 import com.example.jpabook.jpashop.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,8 +89,8 @@ class OrderServiceTest {
         return member;
     }
 
-    private Top createTop(String name, String brand, int price, int stockQuantity, String gender, String material) {
-        Top top = new Top();
+    private Clothes createTop(String name, String brand, int price, int stockQuantity, String gender, String material) {
+        Clothes top = new Clothes();
         top.setName(name);
         top.setBrand(brand);
         top.setPrice(price);

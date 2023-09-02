@@ -26,9 +26,6 @@ public abstract class Item {
     private int price;
     private int stockQuantity;
 
-    private String gender; //MEN, WOMEN, GENDERLESS
-    private String material;
-
 
     @OneToMany(mappedBy = "item")
     private List<CategoryItem> categoryItems = new ArrayList<>();

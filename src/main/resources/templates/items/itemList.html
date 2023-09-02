@@ -1,11 +1,18 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header :: header" />
-<body>
-
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/header :: header"></head>
+<body class="sub_page">
+<div class="hero_area">
+    <!-- header section strats -->
+    <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+        <div th:replace="/fragments/nav :: nav"></div>
+    </section>
+    <!-- end slider section -->
+</div>
 <div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-
     <div>
         <table class="table table-striped">
             <thead>
@@ -13,6 +20,7 @@
                 <th>#</th>
                 <th>상품명</th>
                 <th>가격</th>
+                <th>브랜드</th>
                 <th>재고수량</th>
                 <th></th>
             </tr>
@@ -21,6 +29,7 @@
             <tr th:each="item : ${items}">
                 <td th:text="${item.id}"></td>
                 <td th:text="${item.name}"></td>
+                <td th:text="${item.brand}"></td>
                 <td th:text="${item.price}"></td>
                 <td th:text="${item.stockQuantity}"></td>
                 <td>
@@ -31,9 +40,12 @@
         </table>
     </div>
 
-    <div th:replace="fragments/footer :: footer"/>
 
 </div> <!-- /container -->
+<section class="info_section layout_padding2-top">
+    <div th:replace="/fragments/info :: info"></div>
+</section>
+<div th:replace="fragments/footer :: footer"></div>
 
 </body>
 </html>

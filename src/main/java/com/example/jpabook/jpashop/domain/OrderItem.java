@@ -3,7 +3,6 @@ package com.example.jpabook.jpashop.domain;
 import com.example.jpabook.jpashop.domain.item.Item;
 import lombok.Getter;
 import lombok.Setter;
-import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
 

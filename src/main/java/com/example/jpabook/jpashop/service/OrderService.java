@@ -5,12 +5,9 @@ import com.example.jpabook.jpashop.domain.item.Item;
 import com.example.jpabook.jpashop.repository.ItemRepository;
 import com.example.jpabook.jpashop.repository.MemberRepository;
 import com.example.jpabook.jpashop.repository.OrderRepository;
-import com.example.jpabook.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional(readOnly = true)

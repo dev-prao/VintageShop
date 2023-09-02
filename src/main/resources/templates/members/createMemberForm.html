@@ -5,7 +5,7 @@
 </head>
 
 
-<body class="sub_page about_page">
+<body class="sub_page">
 <div class="hero_area">
     <!-- header section strats -->
     <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
@@ -21,31 +21,29 @@
 
 <!-- about section -->
 
-<section class="about_section layout_padding">
-    <form role="form" action="/members/new" th:object="${memberForm}" method="post">
-        <div class="form-group">
-            <label th:for="name">이름</label>
+<form role="form" action="/members/new" th:object="${memberForm}" method="post">
+    <div class="form-group">
+        <label th:for="name">이름</label>
 
-            <input type="text" th:field="*{name}" class="form-control" placeholder="이름을 입력하세요"
-                   th:class="${#fields.hasErrors('name')}? 'form-control fieldError' : 'form-control'">
-            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect date</p>
+        <input type="text" th:field="*{name}" class="form-control" placeholder="이름을 입력하세요"
+               th:class="${#fields.hasErrors('name')}? 'form-control fieldError' : 'form-control'">
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect date</p>
 
-        </div>
-        <div class="form-group">
-            <label th:for="city">도시</label>
-            <input type="text" th:field="*{city}" class="form-control" placeholder="도시를 입력하세요">
-        </div>
-        <div class="form-group">
-            <label th:for="street">거리</label>
-            <input type="text" th:field="*{street}" class="form-control" placeholder="거리를 입력하세요">
-        </div>
-        <div class="form-group">
-            <label th:for="zipcode">우편번호</label>
-            <input type="text" th:field="*{zipcode}" class="form-control" placeholder="우편번호를 입력하세요">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</section>
+    </div>
+    <div class="form-group">
+        <label th:for="city">도시</label>
+        <input type="text" th:field="*{city}" class="form-control" placeholder="도시를 입력하세요">
+    </div>
+    <div class="form-group">
+        <label th:for="street">거리</label>
+        <input type="text" th:field="*{street}" class="form-control" placeholder="거리를 입력하세요">
+    </div>
+    <div class="form-group">
+        <label th:for="zipcode">우편번호</label>
+        <input type="text" th:field="*{zipcode}" class="form-control" placeholder="우편번호를 입력하세요">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 <!-- end about section -->
 
 <!-- info section -->
