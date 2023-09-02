@@ -3,7 +3,6 @@ package com.example.jpabook.jpashop.service;
 import com.example.jpabook.jpashop.domain.Member;
 import com.example.jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +29,10 @@ public class MemberService {
         if (!findMembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 아이디입니다.");
         }
+    }
+
+    public List<Member> findMember() {
+        return memberRepository.findAll();
     }
 
     public Member findOne(Long memberId) {
