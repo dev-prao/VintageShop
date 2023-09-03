@@ -12,6 +12,7 @@ import static javax.persistence.FetchType.*;
 @Entity
 @Getter
 @Setter
+@DiscriminatorColumn(name = "clothes")
 public class Category {
     @Id
     @GeneratedValue

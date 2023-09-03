@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:XE
-    username: develop
-    password: 1234
-    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:h2:tcp://localhost/~/project;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
 
   thymeleaf:
     prefix: classpath:/templates/
@@ -15,6 +15,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
 
 
 logging:
