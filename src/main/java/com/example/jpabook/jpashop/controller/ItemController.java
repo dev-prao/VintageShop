@@ -33,7 +33,6 @@ public class ItemController {
         clothes.setBrand(form.getBrand());
         clothes.setStockQuantity(form.getStockQuantity());
         clothes.setSize(form.getSize());
-        clothes.setGender(form.getGender());
         clothes.setMaterial(form.getMaterial());
 
         itemService.saveItem(clothes);

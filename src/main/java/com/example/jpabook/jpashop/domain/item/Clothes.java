@@ -12,6 +12,5 @@ import javax.persistence.Entity;
 @DiscriminatorValue("clo")
 public class Clothes extends Item {
     private int size;
-    private String gender;
     private String material;
 }

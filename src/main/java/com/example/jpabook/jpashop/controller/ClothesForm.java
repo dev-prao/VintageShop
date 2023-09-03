@@ -15,6 +15,5 @@ public class ClothesForm {
     private int stockQuantity;
 
     private int size;
-    private String gender;
     private String material;
 }
