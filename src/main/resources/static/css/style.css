@@ -76,9 +76,25 @@ body {
   height: auto;
 }
 
-.sub_page .container {
+.sub_page .sub_form {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  height: 50vh;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.sub_page .form-container {
+  text-align: center; /* 폼 내부 요소를 중앙 정렬 */
+}
+
+.sub_page .form-container .label-left {
+  text-align: left;
+}
+
+.sub_page .form-container .button-container {
+  margin-top: 20px; /* 버튼 위 여백을 조정할 수 있습니다. */
 }
 
 .sub_page .form-control {

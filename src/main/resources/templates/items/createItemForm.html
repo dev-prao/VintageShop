@@ -12,30 +12,31 @@
     </section>
     <!-- end slider section -->
 </div>
-<div class="container">
-    <form th:action="@{/items/new}" th:object="${form}" method="post">
+<div class="sub_form">
+    <form th:action="@{/items/new}" th:object="${form}" method="post" class="form-container">
         <div class="form-group">
-            <label th:for="name">상품명</label>
+            <label th:for="name" class="label-left">상품명</label>
             <input type="text" th:field="*{name}" class="form-control" placeholder="이름을 입력하세요">
         </div>
         <div class="form-group">
-            <label th:for="price">가격</label>
-            <input type="number" th:field="*{price}" class="form-control" placeholder="가격을 입력하세요">
-        </div>
-        <div class="form-group">
-            <label th:for="brand">브랜드</label>
+            <label th:for="brand" class="label-left">브랜드</label>
             <input type="text" th:field="*{brand}" class="form-control" placeholder="브랜드명을 입력하세요">
         </div>
         <div class="form-group">
-            <label th:for="stockQuantity">수량</label>
+            <label th:for="price" class="label-left">가격</label>
+            <input type="number" th:field="*{price}" class="form-control" placeholder="가격을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label th:for="stockQuantity" class="label-left">수량</label>
             <input type="number" th:field="*{stockQuantity}" class="form-control" placeholder="수량을 입력하세요">
         </div>
         <div class="form-group">
-            <label th:for="size">사이즈</label>
+            <label th:for="size" class="label-left">사이즈</label>
             <input type="number" th:field="*{size}" class="form-control" placeholder="사이즈를 입력하세요">
         </div>
         <div class="form-group">
-            <label th:for="material">소재</label>
+            <label th:for="material" class="label-left">소재</label>
             <input type="text" th:field="*{material}" class="form-control" placeholder="소재를 입력하세요">
         </div>
         <button type="submit" class="btn btn-primary">등록</button>

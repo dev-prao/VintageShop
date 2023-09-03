@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -46,5 +48,27 @@ public class ItemController {
         List<Item> items = itemService.findItems();
         model.addAttribute("items", items);
         return "items/itemList";
+    }
+
+    @GetMapping("/items/{itemId}/edit")
+    public String updateItemForm(@PathVariable("itmeId") Long itemId, Model model) {
+        Clothes item = (Clothes) itemService.findOne(itemId);
+        ClothesForm form = new ClothesForm();
+        form.setId(item.getId());
+        form.setName(item.getName());
+        form.setBrand(item.getBrand());
+        form.setPrice(item.getPrice());
+        form.setStockQuantity(item.getStockQuantity());
+        form.setSize(item.getSize());
+        form.setMaterial(item.getMaterial());
+
+        model.addAttribute("form", form);
+        return "items/updateItemForm";
+    }
+
+    @PostMapping("items/{itemId}/edit")
+    public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") ClothesForm form) {
+        itemService.updateItem(itemId, form.getName(), form.getBrand(), form.getPrice(), form.getStockQuantity());
+        return "redirect:/items";
     }
 }
