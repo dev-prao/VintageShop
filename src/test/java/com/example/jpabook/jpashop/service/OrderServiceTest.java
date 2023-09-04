@@ -34,7 +34,7 @@ class OrderServiceTest {
     public void 상품주문() throws Exception {
         //given
         Member member = createMember();
-        Item item = createTop("무지 긴팔티", "무신사", 10000, 20, "men", "cotton");
+        Item item = createClothes("무지 긴팔티", "무신사", 10000, 20, 105, "cotton");
         int orderCount = 2;
 
         //when
@@ -54,7 +54,7 @@ class OrderServiceTest {
     public void 상품주문_재고수량초과() throws Exception {
         //Given
         Member member = createMember();
-        Item item = createTop("무지 긴팔티", "무신사", 10000, 20, "men", "cotton");
+        Item item = createClothes("무지 긴팔티", "무신사", 10000, 20, 105, "cotton");
         int orderCount = 2; //재고보다 많은 수량 //When
         orderService.order(member.getId(), item.getId(), orderCount);
         //Then
@@ -66,7 +66,7 @@ class OrderServiceTest {
     public void 주문취소 () throws Exception {
         //given
         Member member = createMember();
-        Item item = createTop("무지 긴팔티", "무신사", 10000, 20, "men", "cotton");
+        Item item = createClothes("무지 긴팔티", "무신사", 10000, 20, 105, "cotton");
         int orderCount = 2;
 
         Long orderId = orderService.order(member.getId(), item.getId(), orderCount);
@@ -89,15 +89,15 @@ class OrderServiceTest {
         return member;
     }
 
-    private Clothes createTop(String name, String brand, int price, int stockQuantity, String gender, String material) {
-        Clothes top = new Clothes();
-        top.setName(name);
-        top.setBrand(brand);
-        top.setPrice(price);
-        top.setStockQuantity(stockQuantity);
-        top.setGender(gender);
-        top.setMaterial(material);
-        em.persist(top);
-        return top;
+    private Clothes createClothes(String name, String brand, int price, int stockQuantity, int size, String material) {
+        Clothes clothes = new Clothes();
+        clothes.setName(name);
+        clothes.setBrand(brand);
+        clothes.setPrice(price);
+        clothes.setStockQuantity(stockQuantity);
+        clothes.setSize(size);
+        clothes.setMaterial(material);
+        em.persist(clothes);
+        return clothes;
     }
 }

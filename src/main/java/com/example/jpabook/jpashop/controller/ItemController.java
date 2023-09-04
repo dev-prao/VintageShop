@@ -51,7 +51,7 @@ public class ItemController {
     }
 
     @GetMapping("/items/{itemId}/edit")
-    public String updateItemForm(@PathVariable("itmeId") Long itemId, Model model) {
+    public String updateItemForm(@PathVariable("itemId") Long itemId, Model model) {
         Clothes item = (Clothes) itemService.findOne(itemId);
         ClothesForm form = new ClothesForm();
         form.setId(item.getId());
@@ -66,7 +66,7 @@ public class ItemController {
         return "items/updateItemForm";
     }
 
-    @PostMapping("items/{itemId}/edit")
+    @PostMapping("/items/{itemId}/edit")
     public String updateItem(@PathVariable Long itemId, @ModelAttribute("form") ClothesForm form) {
         itemService.updateItem(itemId, form.getName(), form.getBrand(), form.getPrice(), form.getStockQuantity());
         return "redirect:/items";
