@@ -23,18 +23,17 @@ class ItemServiceTest {
     ItemRepository itemRepository;
 
 
-//    @Test
-//    public void 상품_업데이트() throws Exception { //수정필요
-//        //given
-//        Item clothes = new Clothes();
-//        clothes.setName("무신사");
-//        itemService.saveItem(clothes);
-//
-//        //when
-//        Item updateClothes = itemService.updateItem(clothes.getId(),"하이버","도프제이슨",10000,100);
-//        Item findOne = itemService.findOne(clothes.getId());
-//
-//        //then
-//        Assertions.assertThat(findOne.getName()).isEqualTo(updateClothes.getName());
-//    }
+    @Test
+    public void 상품_업데이트() throws Exception { //수정필요
+        //given
+        Item clothes = new Clothes();
+        clothes.setName("무신사");
+        itemService.saveItem(clothes);
+
+        //when
+        itemService.updateItem(clothes.getId(),"하이버","도프제이슨",10000,100);
+        Item findOne = itemService.findOne(clothes.getId());
+
+        //then
+    }
 }

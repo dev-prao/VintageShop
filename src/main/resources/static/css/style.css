@@ -78,13 +78,12 @@ body {
 }
 
 .sub_page .sub_form {
-  background-color: #d3d9df;
+  background-color: white;
   width: 100%;
   padding: 40px;
   border-radius: 55px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
@@ -95,6 +94,7 @@ body {
   /* 부모 요소로부터 크기를 상속받게 하고 내용에 맞게 크기 조절 */
   width: inherit;
   max-width: 500px; /* 내부 폼의 최대 너비를 설정 (원하는 크기로 조절) */
+  height: 650px;
 }
 
 .form-container {
@@ -346,19 +346,6 @@ a:focus {
   background-color: transparent;
   color: #f8bc1a;
 }
-
-/*.slider_section .detail-box .btn-box .btn-2 {*/
-/*  display: inline-block;*/
-/*  padding: 7px 0;*/
-/*  background-color: #f4f3f3;*/
-/*  border: 1px solid #f4f3f3;*/
-/*  color: #020000;*/
-/*}*/
-
-/*.slider_section .detail-box .btn-box .btn-2:hover {*/
-/*  background-color: transparent;*/
-/*  color: #f4f3f3;*/
-/*}*/
 
 .slider_section .carousel-indicators {
   bottom: 50%;

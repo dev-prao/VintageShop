@@ -55,7 +55,8 @@ class OrderServiceTest {
         //Given
         Member member = createMember();
         Item item = createClothes("무지 긴팔티", "무신사", 10000, 20, 105, "cotton");
-        int orderCount = 2; //재고보다 많은 수량 //When
+        int orderCount = 21; //재고보다 많은 수량
+        // When
         orderService.order(member.getId(), item.getId(), orderCount);
         //Then
         assertThrows(NotEnoughStockException.class, () -> {orderService.order(member.getId(), item.getId(), orderCount);},
