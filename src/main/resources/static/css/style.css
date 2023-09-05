@@ -1,4 +1,5 @@
 body {
+  min-width: 500px;
   font-family: "Poppins", sans-serif;
   color: #040000;
   background-color: #ffffff;
@@ -65,8 +66,8 @@ body {
 /*header section*/
 .hero_area {
   height: 100vh;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0))), url(../images/hero-bg.jpg);
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(../images/hero-bg.jpg);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right bottom;
@@ -77,20 +78,39 @@ body {
 }
 
 .sub_page .sub_form {
+  background-color: #d3d9df;
+  width: 100%;
+  padding: 40px;
+  border-radius: 55px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  /*align-items: center;*/
-  height: 50vh;
-  margin-left: 20px;
-  margin-right: 20px;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.sub_page .form-container {
-  text-align: center; /* 폼 내부 요소를 중앙 정렬 */
+.sub_page .sub_form {
+  /* 이전 스타일 유지 */
+
+  /* 부모 요소로부터 크기를 상속받게 하고 내용에 맞게 크기 조절 */
+  width: inherit;
+  max-width: 500px; /* 내부 폼의 최대 너비를 설정 (원하는 크기로 조절) */
 }
 
-.sub_page .form-container .label-left {
-  text-align: left;
+.form-container {
+  /* 폼 스타일 설정 */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  /* 그 외 스타일 속성들 */
+
+  /* 내용에 맞게 크기 조절 (예: 내부 폼 컨텐츠에 따라 높이 자동 조절) */
+  width: 100%;
+  box-sizing: border-box; /* 내부 패딩과 테두리를 너비에 포함시킵니다 */
+}
+
+.sub_page .form-container .btn .btn-primary {
+  margin: 0 auto;
 }
 
 .sub_page .form-container .button-container {
@@ -98,7 +118,7 @@ body {
 }
 
 .sub_page .form-control {
-  width: 400px;
+  width: 100%;
   height: auto;
 }
 
@@ -130,7 +150,7 @@ body {
 }
 
 .custom_nav-container .contact_nav .nav-item .nav-link {
-  padding: 0px 25px;
+  padding: 0 25px;
   color: #000000;
   text-align: center;
 }
@@ -185,6 +205,7 @@ a:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
+
 
 .custom_nav-container .nav_search-btn {
   background-image: url(../images/search-icon-black.png);
@@ -303,7 +324,6 @@ a:focus {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 35px;
   margin: 35px -5px 0 -5px;
   justify-content: center;
 }
@@ -871,7 +891,6 @@ a:focus {
   background-color: #f8bc1a;
   display: inline-block;
   padding: 9px 30px;
-  background-color: #f8bc1a;
   border: 1px solid #f8bc1a;
   color: #000000;
   font-size: 15px;

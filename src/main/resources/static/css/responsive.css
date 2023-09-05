@@ -1,8 +1,10 @@
-@media (max-width: 1400px) {}
+@media (max-width: 1400px) {
+}
 
-@media (max-width: 1120px) {}
+@media (max-width: 1300px) {
+}
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
 
 
     .hero_area {
@@ -58,10 +60,6 @@
         margin: 2% 0;
     }
 
-    .custom_nav2 {
-        padding: 0;
-    }
-
     .us_section .us_container {
         flex-direction: column;
     }
@@ -86,7 +84,7 @@
         width: 100%;
     }
 
-    .info_section .row>div {
+    .info_section .row > div {
         margin-bottom: 25px;
         text-align: center;
     }
@@ -102,13 +100,21 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .custom_nav2 {
+        padding: 0;
+    }
+}
+
+
 @media (max-width: 576px) {
     .slider_section .detail-box h1 {
         font-size: 3rem;
     }
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
 @media (max-width: 400px) {
     .slider_section .detail-box h2 {
@@ -132,11 +138,12 @@
 
 }
 
-@media (max-width: 360px) {}
+@media (max-width: 360px) {
+}
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1170px;
+        max-width: 1200px;
     }
 
 }
