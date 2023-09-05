@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <div class="footer" th:fragment="footer">
   <!-- footer section -->
   <section class="container-fluid footer_section ">
@@ -11,6 +11,34 @@
 
   <script type="/text/javascript" src="/js/jquery-3.4.1.min.js"></script>
   <script type="/text/javascript" src="/js/bootstrap.js"></script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 현재 페이지의 URI 가져오기
+      var currentUri = window.location.pathname;
+
+      // 각 페이지에 대한 id와 URI를 매핑
+      var pageMappings = {
+        "home": "/",
+        "items-new": "/items/new",
+        "items": "/items",
+        "order": "/order",
+        "orders": "/orders",
+        "members-new": "/members/new",
+        "members": "/members"
+      };
+
+      // 각 페이지에 대한 id를 활성화하거나 비활성화
+      Object.keys(pageMappings).forEach(function (page) {
+        if (currentUri === pageMappings[page]) {
+          document.getElementById(page).classList.add("active");
+        } else {
+          document.getElementById(page).classList.remove("active");
+        }
+      });
+    });
+</script>
 
   <script>
     function openNav() {
